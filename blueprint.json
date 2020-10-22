@@ -1,0 +1,26 @@
+{
+	"title": "postfix_relay",
+	"description": "postfix relay",
+	"configuration": {
+	  "DEBIAN_FRONTEND" : "noninteractive",
+	  "smarthost": { 
+	   "host": "",
+	  "auth_type": "plain",
+	  "user": "",
+	  "password": "",
+	  "port": 465
+	  }
+	}
+,
+"images": [
+	{
+		"type": "lxd",
+		"image": "posfix"
+	}
+],
+"containers": [
+	{
+		"type": "lxd"
+	}
+]
+}
