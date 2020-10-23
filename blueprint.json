@@ -2,7 +2,6 @@
 	"title": "postfix_relay",
 	"description": "postfix relay",
 	"configuration": {
-	  "DEBIAN_FRONTEND" : "noninteractive",
 	  "smarthost": { 
 	   "host": "",
 	  "auth_type": "plain",
@@ -10,12 +9,21 @@
 	  "password": "",
 	  "port": 465
 	  }
-	}
-,
+	},	
+	"bindings": [
+		{
+			"type": "embed",
+			"repository": "https://github.com/v2Blueprints/postfix",
+			"branch": "hashidocker",
+			"configuration": {
+				 "default_domain": "^^domain_name^^"
+			}
+		}
+		],
 "images": [
 	{
 		"type": "lxd",
-		"image": "posfix"
+		"image": "enginesd_debian_base"
 	}
 ],
 "containers": [
