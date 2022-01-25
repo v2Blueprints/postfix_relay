@@ -1,15 +1,15 @@
 {
-	"title": "postfix_relay",
-	"description": "postfix relay",
+	"about": {
+		"title": "postfix_relay",
+		"explanation": "postfix relay"
+  },
 	"configuration": {
-	  "smarthost": { 
-	   "host": "",
-	  "auth_type": "plain",
-	  "user": "",
-	  "password": "",
-	  "port": 465
-	  }
-	},	
+		"host": "",
+		"auth_type": "plain",
+		"user": "",
+		"password": "",
+		"port": 465
+	},
 	"bindings": [
 		{
 			"type": "embed",
@@ -18,17 +18,25 @@
 			"configuration": {
 				 "default_domain": "^^domain_name^^"
 			}
-		}
-		],
-"images": [
-	{
-		"type": "lxd",
-		"image": "enginesd_debian_base"
-	}
-],
-"containers": [
-	{
-		"type": "lxd"
-	}
-]
+		},
+    {
+      "type": "embed",
+      "runtimes": [
+        "lxd"
+      ],
+      "target": {
+        "repository": "https://github.com/v2Blueprints/enginesd_debian_base"
+      }
+    }
+  ],
+  "images": [
+    {
+      "runtimes": [
+        "docker"
+      ],
+      "target": {
+        "repository": "https://github.com/v2Blueprints/enginesd_debian_base"
+      }
+    }
+  ]
 }
